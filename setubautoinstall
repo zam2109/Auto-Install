@@ -9,8 +9,6 @@ yes | pkg update
 yes | pkg upgrade
 yes | pkg i python
 yes | pkg i python-pip
-pip install requests rich prettytable pytz pycryptodome
+pip install requests tqdm packaging
 export CFLAGS="-Wno-error=implicit-function-declaration"
-pkg install python-psutil -y
-
 curl -Ls "https://raw.githubusercontent.com/zam2109/Toolrejoin/refs/heads/main/zamtoolrejoinver10.py" -o /sdcard/Download/zamtoolrejoinver10.py
