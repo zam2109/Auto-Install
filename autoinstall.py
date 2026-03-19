@@ -286,6 +286,8 @@ def list_and_select_files(files, folder_name):
         return []
 
     file_list = list(files.values())
+
+    # Hiện danh sách file
     print(f"\n  ╔══════════════════════════════════════════════════╗")
     print(f"  ║  📁 {folder_name:<44}║")
     print(f"  ╠════╦══════════════════════════════════╦══════════╣")
@@ -293,25 +295,64 @@ def list_and_select_files(files, folder_name):
     print(f"  ╠════╬══════════════════════════════════╬══════════╣")
     for i, f in enumerate(file_list, 1):
         size_mb = f.get("size", 0) / (1024 * 1024)
-        name = f["name"][:30]
-        print(f"  ║{i:3} ║ {name:<32}║{size_mb:7.1f}MB║")
+        name_trunc = f["name"][:30]
+        print(f"  ║{i:3} ║ {name_trunc:<32}║{size_mb:7.1f}MB║")
     print(f"  ╠════╩══════════════════════════════════╩══════════╣")
-    print(f"  ║  Nhập số (VD: 1 2 3), 'all' = tất cả, 0 = thoát ║")
-    print(f"  ╚══════════════════════════════════════════════════╝")
-
-    choice = input("\n  👉 Chọn file: ").strip().lower()
-    if choice == "0":
-        return []
-    if choice == "all":
-        return file_list
+    print(f"  ║  Nhập từng số → Enter | 'all' = tất cả          ║")
+    print(f"  ║  'q' = xác nhận tải   | '0'  = huỷ              ║")
+    print(f"  ╚══════════════════════════════════════════════════╝\n")
 
     selected = []
-    for part in choice.split():
-        if part.isdigit():
-            idx = int(part) - 1
-            if 0 <= idx < len(file_list):
+    selected_indices = set()  # Tránh chọn trùng
+
+    while True:
+        # Hiện lại những file đã chọn
+        if selected:
+            print(f"  ✅ Đã chọn ({len(selected)} file):", end=" ")
+            print(", ".join([f"[{file_list.index(f)+1}] {f['name']}" for f in selected]))
+
+        raw = input("  👉 Nhập số / 'all' / 'q' / '0': ").strip().lower()
+
+        # ── Huỷ ──────────────────────────────────────────────
+        if raw == "0":
+            print("  ⏹  Đã huỷ.")
+            return []
+
+        # ── Kích hoạt tải ─────────────────────────────────────
+        if raw == "q":
+            if not selected:
+                print("  [!] Chưa chọn file nào! Nhập ít nhất 1 số trước.")
+                continue
+            return selected
+
+        # ── Chọn tất cả ───────────────────────────────────────
+        if raw == "all":
+            print(f"  ✅ Đã chọn tất cả {len(file_list)} file.")
+            return file_list
+
+        # ── Bỏ chọn (nhập lại số đã chọn) ────────────────────
+        if raw.isdigit():
+            idx = int(raw) - 1
+            if idx < 0 or idx >= len(file_list):
+                print(f"  [!] Số {raw} không hợp lệ (1 - {len(file_list)}), nhập lại.")
+                continue
+
+            if idx in selected_indices:
+                # Bỏ chọn nếu nhập lại số đã chọn
+                selected_indices.remove(idx)
+                removed = file_list[idx]
+                selected = [f for f in selected if f != removed]
+                print(f"  ➖ Bỏ chọn: [{raw}] {removed['name']}")
+            else:
+                # Thêm vào danh sách
+                selected_indices.add(idx)
                 selected.append(file_list[idx])
-    return selected
+                print(f"  ➕ Thêm:    [{raw}] {file_list[idx]['name']}")
+            continue
+
+        # ── Nhập sai ──────────────────────────────────────────
+        print(f"  [!] '{raw}' không hợp lệ. Nhập số, 'all', 'q' hoặc '0'.")
+
 
 
 # ════════════════════════════════════════════════════════════
