@@ -19,7 +19,7 @@ from packaging import version  # pip install packaging
 CURRENT_VERSION = "1.0.0"      # Phiên bản hiện tại của tool này
 
 # Link raw GitHub tới file version.json của bạn
-VERSION_CHECK_URL = "https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/version.json"
+VERSION_CHECK_URL = "https://raw.githubusercontent.com/zam2109/Auto-Install/refs/heads/main/version.json"
 
 API_TOKEN  = "PCCB1VRHKM3QHVO2ABEPJUYEtWkDhHxM"
 ACCOUNT_ID = "fe6763c0-77b1-4997-a1ab-15ef4909d0d7"
