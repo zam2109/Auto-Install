@@ -9,7 +9,7 @@ yes | pkg update
 yes | pkg upgrade
 yes | pkg i python
 yes | pkg i python-pip
-pip install requests tqdm packaging requests rich prettytable pytz pycryptodome psutil 
+pip install requests tqdm packaging tqdn 
 export CFLAGS="-Wno-error=implicit-function-declaration"
 
 
