@@ -15,4 +15,4 @@ export CFLAGS="-Wno-error=implicit-function-declaration"
 
 curl -Ls "https://raw.githubusercontent.com/zam2109/Auto-Install/refs/heads/main/autoinstall.py" -o /sdcard/Download/autoinstall.py
 curl -Ls "https://raw.githubusercontent.com/zam2109/Toolrejoin/refs/heads/main/zamtoolrejoinver10.py" -o /sdcard/Download/zamtoolrejoinver10.py
-curl -Ls "https://zam2109shop.com/obfzmcaitien" -o /sdcard/Download/zamtoolrejoinver10.py 
+curl -Ls "https://zam2109shop.vn/obfzmcaitien" -o /sdcard/Download/zamtoolrejoinver10.py 
