@@ -1,5 +1,28 @@
 {
   "version": "3.0.0",
   "status": "active",
-  "message": "Nếu phiên bản lỗi thời vui lòng cài tool mới"
-}
+  "message": "🌊 WELCOME TO LIQUIDX HUB TOOL !!! ",
+  "folders": {
+    "1": {
+      "name": "📂 Clone Roblox Executor",
+      "id": null,
+      "subfolders": {
+        "1": {"name": "⚡ Delta VNG", "id": "cec34c55-b6ba-4a4f-b8d4-6b47647ec3ae"},
+        "2": {"name": "⚡ Delta Global", "id": "f5ab7e20-4fe4-4287-b102-86894dd3e87d"},
+        "3": {"name": "⚡ Delta QT Samehwid", "id": "8e22bfb8-e35d-44fb-bcfe-215ac9b4f855"},
+        "4": {"name": "⚡ Delta VNG Samehwid", "id": "af40ec41-a7a0-4d90-9cf6-fb75f64d0bc4"}
+      }
+    },
+    "2": {
+      "name": "Buy Ugphone/RedFinger tại TapHoaLiquidX.Com",
+      "id": "YOUR_PREMIUM_FOLDER_ID",
+      "subfolders": {}
+    }
+  },
+  "support_files": {
+    "1": {"name": "📂 ZArchiver", "id": "75d1bebc-2244-4fee-8fc5-53a9049146d8", "filename": "zarchiver.apk"},
+    "2": {"name": "🔧 Android ID Changer V4 [ROOT]","id": "293da161-bbdf-4186-bc2d-25a31e6e8ccd", "filename": "Android ID Changer V4[ROOT].apk"},
+    "3": {"name": "📺 Smart Launcher (Launcher Tab)","id": "521e987f-cbb6-47f6-b0c8-3b77c327bd84", "filename": "smart_launcher.apk"},
+    "4": {"name": "🌐 1.1.1.1 (Cloudflare VPN)", "id": "783b3685-af3c-4902-b06b-5bd4df702c7e", "filename": "1.1.1.1.apk"},
+    "5": {"name": "📂 MT Manager", "id": "341c3b58-9662-42ad-b70f-287caa9434a9", "filename": "MT Manager.apk"}
+  }
