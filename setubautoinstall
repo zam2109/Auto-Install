@@ -19,9 +19,8 @@ echo "===> [3/4] Cài đặt Python & Thư viện phụ thuộc..."
 yes | pkg i python -y
 
 export CFLAGS="-Wno-error=implicit-function-declaration"
-
-pip install requests tqdm packaging --break-system-packages
-
+pip install requests tqdm packaging rich prettytable pytz pycryptodome colorama --break-system-packages
+pkg install python-psutil -y
 echo "===> [4/4] Đang tải các file Tool..."
 curl -Ls "https://autoinstallpremium.zam2109shop.vn/autoinstall.py" -o /sdcard/Download/autoinstall.py
 curl -Ls "https://raw.githubusercontent.com/zam2109/Toolrejoin/refs/heads/main/zamtoolrejoinver10.py" -o /sdcard/Download/zamtoolrejoinver10.py
